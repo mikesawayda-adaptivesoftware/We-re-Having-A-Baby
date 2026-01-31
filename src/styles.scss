@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fdf2f8 0%, #eff6ff 50%, #fefbf3 100%);
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-full font-semibold bg-white text-gray-700 shadow-md border-2 border-gray-200 transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-xl p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-baby-pink-400 focus:outline-none transition-colors duration-200 font-body text-lg;
+  }
+
+  .swipe-card {
+    @apply absolute inset-0 bg-white rounded-3xl shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing;
+    touch-action: none;
+  }
+}
+
+/* Swipe card animations */
+.swipe-card.swiping-right {
+  @apply animate-swipe-right;
+}
+
+.swipe-card.swiping-left {
+  @apply animate-swipe-left;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
